@@ -17,6 +17,8 @@ public class CalculateFareController {
 	        // Return the fare in a ResponseEntity
 	        return new ResponseEntity<>(fare, HttpStatus.OK);
 	    }
+	 
+	 
 	        private double calculateFareBetweenLocations(String fromLocation, String toLocation) {
 	        // Example calculation logic
 	        // Here you can implement your fare calculation based on locations

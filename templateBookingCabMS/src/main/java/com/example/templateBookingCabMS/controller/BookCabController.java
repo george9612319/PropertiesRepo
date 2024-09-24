@@ -1,22 +1,26 @@
 package com.example.templateBookingCabMS.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.templateBookingCabMS.config.FeignService;
 import com.example.templateBookingCabMS.model.Cab;
 
 @RestController
+@Configuration
 @RequestMapping(path="cab")
 public class BookCabController{
 	
+
+	
 	@Autowired
-	Cab cab;
-	@Autowired
-	FeignService feignService;
+	private FeignService feignService;
 	
 	
 	// highly Recommended
@@ -52,7 +56,7 @@ public class BookCabController{
 		//redirect to a new page? --serving web content
 		
 		//send JSON back to FRONT END, which can do whatever you want with it.
-		
+
 		
 		return cab.toString();
 	}
